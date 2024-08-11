@@ -1,6 +1,6 @@
 import css from "./Contact.module.css";
-import { deleteContact } from "../../redux/contactsOps";
 import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contacts/operations";
 import { IoIosContact } from "react-icons/io";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 
@@ -22,11 +22,7 @@ export default function Contact({ contact: { name, number, id } }) {
           {number}
         </p>
       </div>
-      <button
-        className={css.btn}
-        type="button"
-        onClick={() => handleDelete(id)}
-      >
+      <button className={css.btn} type="button" onClick={handleDelete}>
         Delete
       </button>
     </div>
